@@ -9,7 +9,7 @@
   		var firebaseRef = new Firebase('https://gslightcontrol.firebaseio.com/');
   		firebaseRef.on('value', function(snapshot) {
   			var light = snapshot.val();
-  			//light.color
+  			document.body.style.background = light.color;
   			//light.brightness
   			//light.on
   			console.log(light);
