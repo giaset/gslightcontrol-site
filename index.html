@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+  </head>
+  <body>
+  	<script>
+  		var firebaseRef = new Firebase('https://gslightcontrol.firebaseio.com/');
+  		firebaseRef.on('value', function(snapshot) {
+  			var light = snapshot.val();
+  			//light.color
+  			//light.brightness
+  			//light.on
+  			console.log(light);
+		});
+  	</script>
+  </body>
+</html>
