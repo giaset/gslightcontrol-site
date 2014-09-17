@@ -5,14 +5,19 @@
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
   </head>
   <body>
+  	<div id="light" style="width:100%; height:100%; position:fixed; left:0;top:0;overflow:hidden;">
   	<script>
   		var firebaseRef = new Firebase('https://gslightcontrol.firebaseio.com/');
   		firebaseRef.on('value', function(snapshot) {
   			var light = snapshot.val();
-  			document.body.style.background = light.color;
-  			//light.brightness
-  			//light.on
   			console.log(light);
+  			$("#light").css("background-color", light.color);
+  			$("#light").css("opacity", light.brightness);
+  			if(light.on) {
+  				$("#light").css("display", "block");
+  			} else {
+  				$("#light").css("display", "none");
+  			}
 		});
   	</script>
   </body>
